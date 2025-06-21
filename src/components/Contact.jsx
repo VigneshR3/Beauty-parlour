@@ -77,7 +77,7 @@ console.log("wfef",apiUrl)
         <meta property="og:title" content="beauty parlour" />
         <meta name="keywords" content="beauty parlour" />
         <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="beauty parlour near me" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
