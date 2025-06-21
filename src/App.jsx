@@ -4,10 +4,16 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/home/Index";
 import Notpage from "./pages/Notpage/Notpage";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function App() {
-  const [count, setCount] = useState(0);
-
+   
+ useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <BrowserRouter>
       <Routes>

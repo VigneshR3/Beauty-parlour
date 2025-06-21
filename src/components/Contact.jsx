@@ -20,7 +20,7 @@ import { styled } from "@mui/material/styles";
 import { Appoint } from "../YupSchema/Appoint";
 import axios from "axios";
 import Swal from "sweetalert2";
- 
+
 import BeautyParlourMap from "./BeautyParlourMap";
 
 export const Contact = () => {
@@ -33,8 +33,9 @@ export const Contact = () => {
     servicetype: "",
     message: "",
   };
-const apiUrl = import.meta.env.App_Api;
-console.log("wfef",apiUrl)
+  const apiUrl = import.meta.env.VITE_App_Api;
+
+  console.log("wfef", apiUrl);
   const Formik = useFormik({
     initialValues: initialValues,
     validationSchema: Appoint,
@@ -72,7 +73,6 @@ console.log("wfef",apiUrl)
 
   return (
     <Box id="contact" sx={{ py: 10, backgroundColor: "transparent" }}>
-       
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" color="white" mb={2}>
@@ -234,7 +234,7 @@ console.log("wfef",apiUrl)
                           color: "black",
                           backgroundColor: " rgba(235, 163, 205, 0.51)",
                           "& .MuiSelect-icon": { color: "black" },
-                           
+
                           "&.Mui-focused": {
                             color: "black",
                           },
@@ -331,13 +331,15 @@ console.log("wfef",apiUrl)
                     variant="contained"
                     sx={{
                       backgroundColor: " #E893C5",
-                      "&:hover": { backgroundColor: "rgb(230, 107, 179)",transform: "scale(1.05)" },
+                      "&:hover": {
+                        backgroundColor: "rgb(230, 107, 179)",
+                        transform: "scale(1.05)",
+                      },
                       mt: 3,
                       py: 1.5,
                       fontWeight: "medium",
                       transform: "scale(1)",
                       transition: "transform 0.3s",
-                       
                     }}
                   >
                     Book Your Appointment
@@ -351,8 +353,7 @@ console.log("wfef",apiUrl)
       </Container>
       <Box
         sx={{
-          background:
-            "rgba(255, 126, 212, 0.24)",
+          background: "rgba(255, 126, 212, 0.24)",
           padding: 2,
           borderRadius: 4,
           justifyContent: "space-between",
