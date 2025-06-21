@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { Helmet } from "react-helmet";
+ 
 
 export const About = () => {
   const theme = useTheme();
@@ -33,13 +33,7 @@ export const About = () => {
         backdropFilter: "blur(2px)",
       }}
     >
-      <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />  
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+       
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           {/* Left Content */}

@@ -18,7 +18,7 @@ const Index = () => {
           content="Looking for the best beauty parlour in Madurai? Princess Celestia offers expert bridal makeup, skincare, and hair styling."
         />
         <meta name="author" content="Princess Celestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <meta
           property="og:title"
           content="Princess Celestia - Beauty Parlour in Madurai"
