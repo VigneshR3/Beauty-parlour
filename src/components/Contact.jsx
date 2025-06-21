@@ -337,13 +337,13 @@ console.log("wfef",apiUrl)
                     variant="contained"
                     sx={{
                       backgroundColor: " #E893C5",
-                      "&:hover": { backgroundColor: "rgb(230, 107, 179)" },
+                      "&:hover": { backgroundColor: "rgb(230, 107, 179)",transform: "scale(1.05)" },
                       mt: 3,
                       py: 1.5,
                       fontWeight: "medium",
                       transform: "scale(1)",
                       transition: "transform 0.3s",
-                      "&:hover": { transform: "scale(1.05)" },
+                       
                     }}
                   >
                     Book Your Appointment
