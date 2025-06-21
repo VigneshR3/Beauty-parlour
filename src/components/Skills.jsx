@@ -3,7 +3,7 @@ import { Scissors, Palette, Sparkles, Heart, Star, Crown } from "lucide-react";
 import { Album } from "lucide-react";
 import { Volleyball } from "lucide-react";
 import { Box, Typography, Container, Grid, Paper, Stack } from "@mui/material";
-import { Helmet } from "react-helmet";
+ 
 import { RiShining2Fill } from "react-icons/ri";
 
 const serviceCategories = [
@@ -112,13 +112,7 @@ const serviceCategories = [
 export const Skills = () => {
   return (
     <Box id="services" sx={{ py: 10,background: "linear-gradient(261.49deg , rgba(235, 163, 205, 0.51), rgba(232, 177, 199, 0.74) )", }}>
-      <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />  
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+       
       <Container maxWidth="lg">
         <Box textAlign="center" mb={8}>
           <Typography variant="h4" fontWeight="bold" color="black" mb={2}>

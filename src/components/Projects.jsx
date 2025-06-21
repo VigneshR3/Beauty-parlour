@@ -11,7 +11,7 @@ import {
   CardMedia,
   CardContent,
 } from "@mui/material";
-import { Helmet } from "react-helmet";
+ 
 
 const galleryItems = [
   {
@@ -114,13 +114,7 @@ export const Projects = () => {
         //   "linear-gradient(261.49deg, rgba(224, 47, 117, 0.8) -90.53%, rgba(232, 147, 197, 0.8) 178.18%)",
       }}
     >
-      <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+       
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" color="black" mb={2}>

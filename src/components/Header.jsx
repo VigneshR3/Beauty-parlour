@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Helmet } from "react-helmet";
+ 
 import { BiSolidHomeHeart } from "react-icons/bi";
 import { GrServicePlay } from "react-icons/gr";
 import { HiOutlinePhotograph } from "react-icons/hi";
@@ -44,13 +44,7 @@ export const Header = () => {
 
   return (
     <>
-    <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />  
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+     
       <AppBar
         position="fixed"
         elevation={scrolled ? 4 : 0}

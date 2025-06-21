@@ -10,7 +10,7 @@ import {
   useTheme,
   keyframes,
 } from "@mui/material";
-import { Helmet } from "react-helmet";
+ 
 
 const pulse = keyframes`
   0%, 100% { opacity: 0.4; transform: scale(1); }
@@ -31,13 +31,7 @@ export const Hero = () => {
       overflow="hidden"
       sx={{}} // Optional dark background
     >
-      <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+      
       <video
         autoPlay
         muted

@@ -20,7 +20,7 @@ import { styled } from "@mui/material/styles";
 import { Appoint } from "../YupSchema/Appoint";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Helmet } from "react-helmet";
+ 
 import BeautyParlourMap from "./BeautyParlourMap";
 
 export const Contact = () => {
@@ -72,13 +72,7 @@ console.log("wfef",apiUrl)
 
   return (
     <Box id="contact" sx={{ py: 10, backgroundColor: "transparent" }}>
-      <Helmet>
-        <meta name="description" content="beauty parlour in madurai" />
-        <meta property="og:title" content="beauty parlour" />
-        <meta name="keywords" content="beauty parlour" />
-        <meta name="author" content="PrincessCelestia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+       
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" color="white" mb={2}>
