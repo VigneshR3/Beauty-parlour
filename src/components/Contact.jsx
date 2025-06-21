@@ -33,6 +33,8 @@ export const Contact = () => {
     servicetype: "",
     message: "",
   };
+const apiUrl = import.meta.env.App_Api;
+console.log("wfef",apiUrl)
   const Formik = useFormik({
     initialValues: initialValues,
     validationSchema: Appoint,
@@ -47,7 +49,7 @@ export const Contact = () => {
       fd.append("phonenumber", value.phonenumber);
       fd.append("servicetype", value.servicetype);
       axios
-        .post("http://192.168.43.73:8080/api/appoint", fd)
+        .post(` ${apiUrl}/appoint`, fd)
         .then((res) => {
           console.log("response", res);
           Swal.fire({
