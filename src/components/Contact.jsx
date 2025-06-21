@@ -240,7 +240,7 @@ console.log("wfef",apiUrl)
                           color: "black",
                           backgroundColor: " rgba(235, 163, 205, 0.51)",
                           "& .MuiSelect-icon": { color: "black" },
-                          "& .MuiSelect-icon": { color: "black" },
+                           
                           "&.Mui-focused": {
                             color: "black",
                           },
