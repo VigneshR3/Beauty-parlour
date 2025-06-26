@@ -17,19 +17,18 @@ const parlourLocation = { lat: 9.880722, lng:78.068944 };
 
 function BeautyParlourMap() {
   return (
-    <MapContainer
-      center={parlourLocation}
-      zoom={15}
-      style={{ height: '400px', width: '100%', borderRadius:15 }}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-      />
-      <Marker position={parlourLocation}>
-        <Popup>💇‍♀️ Beauty Parlour<br />Visit us here!</Popup>
-      </Marker>
-    </MapContainer>
+     <div style={{ width: "100%", height: "400px", borderRadius: "15px", overflow: "hidden" }}>
+    <iframe
+      src="https://www.google.com/maps?q=9.880722,78.068944&z=15&output=embed"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Beauty Parlour Location"
+    ></iframe>
+  </div>
   );
 }
 

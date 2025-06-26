@@ -11,7 +11,7 @@ import {
   CardMedia,
   CardContent,
 } from "@mui/material";
- 
+import ImageGallery from "./ImageGallery";
 
 const galleryItems = [
   {
@@ -103,6 +103,8 @@ const galleryItems = [
     category: "Saree Pleating",
   },
 ];
+//Share
+const handleShare = () => {};
 
 export const Projects = () => {
   return (
@@ -114,7 +116,6 @@ export const Projects = () => {
         //   "linear-gradient(261.49deg, rgba(224, 47, 117, 0.8) -90.53%, rgba(232, 147, 197, 0.8) 178.18%)",
       }}
     >
-       
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" color="black" mb={2}>
@@ -131,7 +132,7 @@ export const Projects = () => {
             showcase our expertise and artistry
           </Typography>
         </Box>
-
+        <ImageGallery />
         <Grid container spacing={4}>
           {galleryItems.map((item, index) => (
             <Grid container size={{ xs: 12, md: 4 }} key={index}>
@@ -188,6 +189,7 @@ export const Projects = () => {
                         <Heart size={20} />
                       </IconButton>
                       <IconButton
+                        onClick={handleShare}
                         sx={{
                           color: "white",
                           background: "rgba(255,255,255,0.2)",

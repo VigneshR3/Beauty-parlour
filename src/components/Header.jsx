@@ -20,11 +20,11 @@ import { BiSolidHomeHeart } from "react-icons/bi";
 import { GrServicePlay } from "react-icons/gr";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { BiSolidContact } from "react-icons/bi";
-import { FcAbout } from "react-icons/fc";
+import { HiUserGroup } from "react-icons/hi";
 
 const navItems = [
   { href: "#home", label: "Home" ,icon:<BiSolidHomeHeart/>},
-  { href: "#about", label: "About",icon:<FcAbout/> },
+  { href: "#aboutus", label: "About",icon:<HiUserGroup/> },
   { href: "#services", label: "Services",icon:<GrServicePlay/> },
   { href: "#gallery", label: "Gallery",icon:<HiOutlinePhotograph/> },
   { href: "#contact", label: "Contact",icon:<BiSolidContact/> },

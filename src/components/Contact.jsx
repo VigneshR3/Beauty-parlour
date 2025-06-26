@@ -22,6 +22,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 import BeautyParlourMap from "./BeautyParlourMap";
+import { useEffect, useState } from "react";
 
 export const Contact = () => {
   let initialValues = {
@@ -34,13 +35,19 @@ export const Contact = () => {
     message: "",
   };
   const apiUrl = import.meta.env.VITE_App_Api;
+  const [ButtonInfo, setButtonInfo] = useState(false);
+  const [getYear , setYear] = useState(0)
+  useEffect(() => {
+    const year = new Date().getFullYear();
+    setYear(year);
+  }, []);
 
-  console.log("wfef", apiUrl);
   const Formik = useFormik({
     initialValues: initialValues,
     validationSchema: Appoint,
     onSubmit: (value) => {
       console.log("values", value);
+      setButtonInfo(true);
       const fd = new FormData();
       fd.append("firstname", value.firstname);
       fd.append("lastname", value.lastname);
@@ -59,9 +66,12 @@ export const Contact = () => {
             draggable: true,
           });
           Formik.resetForm();
+          setButtonInfo(false);
         })
         .catch((err) => {
           console.log("Error", err);
+          setButtonInfo(false);
+          Formik.resetForm();
           Swal.fire({
             title: "Email is not send",
             icon: "error",
@@ -75,7 +85,7 @@ export const Contact = () => {
     <Box id="contact" sx={{ py: 10, backgroundColor: "transparent" }}>
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
-          <Typography variant="h4" fontWeight="bold" color="white" mb={2}>
+          <Typography variant="h4" fontWeight="bold" color="black" mb={2}>
             Book Your Beauty Session
           </Typography>
           <Typography
@@ -90,7 +100,7 @@ export const Contact = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={8} m={2}>
+        <Grid container spacing={2} m={2}>
           {/* Appointment Form */}
           <Grid item xs={12} md={6}>
             <Box
@@ -98,7 +108,7 @@ export const Contact = () => {
                 backgroundColor: "rgba(224, 217, 233, 0.34)",
                 backdropFilter: "blur(6px)",
                 borderRadius: 4,
-                p: 4,
+                p: 1,
               }}
             >
               <Box component="form" onSubmit={Formik.handleSubmit}>
@@ -119,15 +129,30 @@ export const Contact = () => {
                       label="First Name"
                       variant="outlined"
                       placeholder="Your first name"
-                      InputLabelProps={{ style: { color: "black" } }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
-
-                          "&.Mui-error": {
-                            color: "white", // Tailwind red-500 if error
+                      sx={{
+                        maxHeight: 55,
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
                           },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+                        "& label": {
+                          color: "gray", // Default label color
+                        },
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -149,11 +174,30 @@ export const Contact = () => {
                       label="Last Name"
                       variant="outlined"
                       placeholder="Your last name"
-                      InputLabelProps={{ style: { color: "black" } }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
+                      sx={{
+                        maxHeight: 55,
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
+                          },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+                        "& label": {
+                          color: "gray", // Default label color
+                        },
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -176,11 +220,30 @@ export const Contact = () => {
                       variant="outlined"
                       type="number"
                       placeholder="+1..."
-                      InputLabelProps={{ style: { color: "black" } }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
+                      sx={{
+                        maxHeight: 55,
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
+                          },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+                        "& label": {
+                          color: "gray", // Default label color
+                        },
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -203,11 +266,30 @@ export const Contact = () => {
                       label="Email"
                       variant="outlined"
                       placeholder="your.email@example.com"
-                      InputLabelProps={{ style: { color: "black" } }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
+                      sx={{
+                        maxHeight: 55,
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
+                          },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+                        "& label": {
+                          color: "gray", // Default label color
+                        },
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -221,7 +303,14 @@ export const Contact = () => {
                   </Grid>
                   <Grid container size={{ xs: 12, sm: 6, md: 4 }}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black" }}>
+                      <InputLabel
+                        sx={{
+                          color: "gray",
+                          "&.Mui-focused": {
+                            color: "rgba(27, 12, 21, 0.51)",
+                          },
+                        }}
+                      >
                         Service Type
                       </InputLabel>
                       <Select
@@ -229,16 +318,24 @@ export const Contact = () => {
                         onChange={Formik.handleChange}
                         onBlur={Formik.handleBlur}
                         name="servicetype"
-                        defaultValue=""
+                        
+                        variant="outlined"
                         sx={{
                           color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
-                          "& .MuiSelect-icon": { color: "black" },
-
-                          "&.Mui-focused": {
-                            color: "black",
+                          backgroundColor: "rgba(235, 163, 205, 0.51)",
+                          borderRadius: 5,
+                          "& .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "#eee", // Default
+                            borderRadius: 5,
+                          },
+                          "&:hover .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // Hover
+                          },
+                          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // Focused
                           },
                         }}
+                        inputProps={{ "aria-label": "Service Type" }}
                       >
                         <MenuItem value="">Select a service</MenuItem>
                         <MenuItem value="hair">Hair Styling</MenuItem>
@@ -249,6 +346,7 @@ export const Contact = () => {
                         <MenuItem value="nails">Nail Services</MenuItem>
                       </Select>
                     </FormControl>
+
                     {Formik.touched.servicetype && Formik.errors.servicetype ? (
                       <FormHelperText sx={{ color: "red" }}>
                         {Formik.errors.servicetype}
@@ -266,14 +364,29 @@ export const Contact = () => {
                       type="date"
                       fullWidth
                       label="Preferred Date"
-                      InputLabelProps={{
-                        shrink: true,
-                        style: { color: "black" },
-                      }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
+                      InputLabelProps={{ shrink: true }}
+                      sx={{
+                        maxHeight: 55,
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
+                          },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -286,14 +399,6 @@ export const Contact = () => {
                     )}
                   </Grid>
                   <Grid container size={{ xs: 12, sm: 6, md: 4 }}>
-                    {/* <StyledTextarea
-                      value={Formik.values.message}
-                      onChange={Formik.handleChange}
-                      onBlur={Formik.handleBlur}
-                      name="message"
-                      minRows={4}
-                      placeholder="Special requests or notes..."
-                    /> */}
                     <TextField
                       value={Formik.values.message}
                       onChange={Formik.handleChange}
@@ -303,14 +408,29 @@ export const Contact = () => {
                       multiline
                       fullWidth
                       label=" message"
-                      InputLabelProps={{
-                        shrink: true,
-                        style: { color: " " },
-                      }}
-                      InputProps={{
-                        style: {
-                          color: "black",
-                          backgroundColor: " rgba(235, 163, 205, 0.51)",
+                      sx={{
+                        color: "black",
+                        borderRadius: 5,
+                        backgroundColor: " rgba(235, 163, 205, 0.51)",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: " #eee", // Default border
+                            borderRadius: 5,
+                          },
+                          "&:hover fieldset": {
+                            borderColor: " rgba(224, 134, 187, 0.51)", // On hover
+                            borderRadius: 5,
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "rgba(224, 134, 187, 0.51)", // On focus
+                            borderRadius: 5,
+                          },
+                        },
+                        "& label": {
+                          color: "gray", // Default label color
+                        },
+                        "& label.Mui-focused": {
+                          color: "rgba(27, 12, 21, 0.51)", // Label color when focused
                         },
                       }}
                     />
@@ -328,6 +448,7 @@ export const Contact = () => {
                   <Button
                     type="submit"
                     fullWidth
+                    disabled={ButtonInfo}
                     variant="contained"
                     sx={{
                       backgroundColor: " #E893C5",
@@ -456,7 +577,7 @@ export const Contact = () => {
         </Grid>
         <Grid container sx={{ justifyContent: "center" }}>
           <Typography variant="body1" textAlign="center">
-            © 2025 ViOT All Rights Reserved.
+            © {getYear} ViOT All Rights Reserved.
           </Typography>
         </Grid>
       </Box>
