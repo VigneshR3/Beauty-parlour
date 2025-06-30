@@ -16,7 +16,7 @@ export const About = () => {
 
   const stats = [
     { value: 500, label: "Happy Clients", suffix: "+" },
-    { value: 2, label: "Years Experience", suffix: "+" },
+    { value: 4, label: "Years Experience", suffix: "+" },
     { value: 6, label: "Expert Stylists", suffix: "+" },
     { value: 50, label: "Beauty Services", suffix: "+" },
   ];
