@@ -48,7 +48,7 @@ export const About = () => {
               mb={3}
               sx={{ lineHeight: 1.8 }}
             >
-              With over 2 years of excellence in beauty and wellness,
+              With over 4 years of excellence in beauty and wellness,
               PrincessCelestia Beauty Parlour has been transforming lives through
               exceptional beauty services. Our team of skilled professionals is
               dedicated to enhancing your natural beauty with premium treatments
