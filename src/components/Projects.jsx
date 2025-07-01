@@ -12,6 +12,7 @@ import {
   CardContent,
 } from "@mui/material";
 import ImageGallery from "./ImageGallery";
+import { Helmet } from "react-helmet";
 
 const galleryItems = [
   {
@@ -104,9 +105,30 @@ const galleryItems = [
   },
 ];
 //Share
-const handleShare = () => {};
+ 
 
 export const Projects = () => {
+
+  //  const [FavorColor, setFavorColor] = React.useState(false);
+  // const handleFavority = () => {
+  //   setFavorColor(!FavorColor);
+  // };
+  const handleShare = async(images , title , description) => {
+   if (navigator.share) {
+    try {
+      await navigator.share({
+        title:  title,
+        text:  title,
+        url: `https://vf97435m-5173.inc1.devtunnels.ms`, // replace with your image URL
+      });
+      console.log("Shared successfully!");
+    } catch (err) {
+      console.error("Error sharing:", err);
+    }
+  } else {
+    alert("Web Share not supported on this device.");
+  }
+};
   return (
     <Box
       id="gallery"
@@ -116,6 +138,13 @@ export const Projects = () => {
         //   "linear-gradient(261.49deg, rgba(224, 47, 117, 0.8) -90.53%, rgba(232, 147, 197, 0.8) 178.18%)",
       }}
     >
+      <Helmet>
+        <meta property="og:title" content="Beauty parlour" />
+        <meta property="og:description" content="Beauty parlour in madurai" />
+        <meta property="og:image" content="https://vf97435m-5173.inc1.devtunnels.ms/bride.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vf97435m-5173.inc1.devtunnels.ms/preview" />
+      </Helmet>
       <Container maxWidth="lg">
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" color="black" mb={2}>
@@ -178,18 +207,19 @@ export const Projects = () => {
                       "&:hover": { opacity: 1 },
                     }}
                   >
-                    <Box display="flex" gap={2}>
-                      <IconButton
+                    <Box  sx={{display:"flex", justifyContent:"flex-end" }} gap={2}>
+                      {/* <IconButton
+                      onClick={handleFavority}
                         sx={{
-                          color: "white",
+                          color: FavorColor ? "red" : undefined,
                           background: "rgba(255,255,255,0.2)",
                           backdropFilter: "blur(3px)",
                         }}
                       >
                         <Heart size={20} />
-                      </IconButton>
+                      </IconButton> */}
                       <IconButton
-                        onClick={handleShare}
+                        onClick={()=>{handleShare(item.image , item.category,item.description)}}
                         sx={{
                           color: "white",
                           background: "rgba(255,255,255,0.2)",

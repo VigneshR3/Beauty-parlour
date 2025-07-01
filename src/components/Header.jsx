@@ -54,7 +54,7 @@ export const Header = () => {
           // backgroundColor: "#E893C5",
           backdropFilter: scrolled ? "blur(6px)" : "none",
           transition: "all 0.3s ease",
-          height:100,
+          height:80,
           justifyItems:"center",
           flexDirection:"column",
           justifyContent:"center",
