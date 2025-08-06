@@ -23,6 +23,7 @@ import Swal from "sweetalert2";
 
 import BeautyParlourMap from "./BeautyParlourMap";
 import { useEffect, useState } from "react";
+import { BaseApi } from "../baseApi";
 
 export const Contact = () => {
   let initialValues = {
@@ -34,7 +35,7 @@ export const Contact = () => {
     servicetype: "",
     message: "",
   };
-  const apiUrl = import.meta.env.VITE_App_Api;
+  
   const [ButtonInfo, setButtonInfo] = useState(false);
   const [getYear , setYear] = useState(0)
   useEffect(() => {
@@ -57,7 +58,7 @@ export const Contact = () => {
       fd.append("phonenumber", value.phonenumber);
       fd.append("servicetype", value.servicetype);
       axios
-        .post(` ${apiUrl}/appoint`, fd)
+        .post(` ${BaseApi}/appoint`, fd)
         .then((res) => {
           console.log("response", res);
           Swal.fire({

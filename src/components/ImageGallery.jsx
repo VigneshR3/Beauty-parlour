@@ -16,6 +16,8 @@ const makeupImages = [
   "/makeup9.jpg",
   "/makeup10.jpg",
   "/makeup11.jpg",
+  "/beaty-20.jpg",
+  "/beaty-21.jpg"
   
    
 ];
@@ -61,9 +63,10 @@ const ImageGallery = () => {
             return (
               
               <img
+              key={i}
                 src={item}
                 alt="beautyparlour"
-                style={{ borderRadius: "15px" ,objectFit:'contain'}}
+                style={{ borderRadius: "15px" ,objectFit:'cover'}}
               /> 
                
                

@@ -45,7 +45,7 @@ export const Hero = () => {
           height: "100%",
           objectFit: "cover",
           opacity:"10",
-           filter: "brightness(0.8) contrast(1.2) saturate(1.8)",
+           filter: "brightness(0.9) contrast(1.0) saturate(1.0)",
           zIndex: 0,
         }}
       >

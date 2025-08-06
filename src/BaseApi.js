@@ -1,0 +1,1 @@
+export const BaseApi = 'https://princesscelestia-i4vf.vercel.app'
