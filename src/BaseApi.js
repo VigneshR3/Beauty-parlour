@@ -1,1 +1,1 @@
-export const BaseApi = 'https://princesscelestia-i4vf.vercel.app'
+export const BaseApi = 'https://beautybackend-2.onrender.com/api'
