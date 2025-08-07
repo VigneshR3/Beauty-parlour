@@ -23,7 +23,7 @@ import Swal from "sweetalert2";
 
 import BeautyParlourMap from "./BeautyParlourMap";
 import { useEffect, useState } from "react";
-import { BaseApi } from "../baseApi";
+import { BaseApi } from "../BaseApi";
 
 export const Contact = () => {
   let initialValues = {
