@@ -16,61 +16,68 @@ const makeupImages = [
   "/makeup9.jpg",
   "/makeup10.jpg",
   "/makeup11.jpg",
-  "/beaty-20.jpg",
-  "/beaty-21.jpg"
-  
-   
+  "/beaty20.jpg",
+  "/beaty21.jpg",
 ];
- 
 
 const ImageGallery = () => {
   const bookRef = useRef();
 
- useEffect(() => {
-  const interval = setInterval(() => {
-    if (bookRef.current) {
-      const flipBook = bookRef.current.pageFlip();
-      const currentPage = flipBook.getCurrentPageIndex();
-      const totalPages = flipBook.getPageCount();
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (bookRef.current) {
+        const flipBook = bookRef.current.pageFlip();
+        const currentPage = flipBook.getCurrentPageIndex();
+        const totalPages = flipBook.getPageCount();
 
-      if (currentPage >= totalPages - 1) {
-        flipBook.turnToPage(0); // go back to first page
-      } else {
-        flipBook.flipNext(); // go to next page
+        if (currentPage >= totalPages - 1) {
+          flipBook.turnToPage(0); // go back to first page
+        } else {
+          flipBook.flipNext(); // go to next page
+        }
       }
-    }
-  }, 3000); // flip every 3 seconds
+    }, 3000); // flip every 3 seconds
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Grid container>
-      <Grid container size={{ xs: 12, md: 6 }} >
-        <img src="/makeup13.jpg" alt="" width="100%" height="100%" style={{borderRadius:'15px',objectFit:'contain' }}/>
+      <Grid container size={{ xs: 12, md: 6 }}>
+        <img
+          src="/makeup13.jpg"
+          alt=""
+          width="100%"
+          height="100%"
+          style={{ borderRadius: "15px", objectFit: "contain" }}
+        />
       </Grid>
-      <Grid container size={{ xs: 12, md: 6 }} direction="row" sx={{backgroundColor:' #ffff',justifyContent:"center",overflow:'hidden'}}>
-         
+      <Grid
+        container
+        size={{ xs: 12, md: 6 }}
+        direction="row"
+        sx={{
+          backgroundColor: " #ffff",
+          justifyContent: "center",
+          overflow: "hidden",
+        }}
+      >
         <HTMLFlipBook
           width={300}
           height={400}
           maxShadowOpacity={0.5}
-           ref={bookRef}
+          ref={bookRef}
           mobileScrollSupport={true}
-          style={{borderRadius:"15px"}}
+          style={{ borderRadius: "15px" }}
         >
-          {makeupImages.map((item,i) => {
+          {makeupImages.map((item, i) => {
             return (
-              
               <img
-              key={i}
+                key={i}
                 src={item}
                 alt="beautyparlour"
-                style={{ borderRadius: "15px" ,objectFit:'cover'}}
-              /> 
-               
-               
-            
+                style={{ borderRadius: "15px", objectFit: "cover" }}
+              />
             );
           })}
         </HTMLFlipBook>

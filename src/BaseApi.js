@@ -1,1 +1,1 @@
-export const BaseApi = 'https://beautybackend-2.onrender.com/api'
+export const BaseApi = 'https://beautybackend-1.onrender.com/api'
