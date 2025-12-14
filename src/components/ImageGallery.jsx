@@ -18,6 +18,18 @@ const makeupImages = [
   "/makeup11.jpg",
   "/beaty20.jpg",
   "/beaty21.jpg",
+  "/makeup15.jpeg",
+  "/makeup16.jpeg",
+  "/makeup17.jpeg",
+  "/makeup18.jpeg",
+  "/makeup19.jpeg",
+  "/makeup20.jpeg",
+  "/makeup21.jpeg",
+  "/makeup22.jpeg",
+  "/makeup23.jpeg",
+  "/makeup24.jpeg",
+  "/makeup25.jpeg",
+  "/makeup26.jpeg",
 ];
 
 const ImageGallery = () => {
